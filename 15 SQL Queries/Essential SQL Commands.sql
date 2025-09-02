@@ -1,5 +1,4 @@
-/* Query 1 */
-/* Simple SELECT */
+Simple SELECT 
 
 select * from fsd_restaurants;
 select * from fsd_reviews;
@@ -271,3 +270,4 @@ JOIN BattingSummary b
 ORDER BY t.Total_Runs DESC;
 
 /* From Cricket DS */
+
