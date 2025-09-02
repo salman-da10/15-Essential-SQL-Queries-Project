@@ -5,7 +5,7 @@ This repository contains 15 SQL queries written and tested on three datasets:
 - **FoodPanda**
 - **CO (Customers/Orders)**
 
-All queries are stored in the `queries.sql` file.  
+All queries are stored in the `Essential SQL Commands.sql` file.  
 Below is a short description of each query along with the dataset it belongs to.
 
 
