@@ -1,6 +1,6 @@
 /* Query 1 */
 /* Simple SELECT */
-/*
+
 select * from fsd_restaurants;
 select * from fsd_reviews;
 select * from isld_restaurants;
@@ -13,28 +13,28 @@ select * from rwp_restaurants;
 select * from rwp_reviews;
 select * from pk_restaurants_2025;
 select * from pk_reviews_2025;
-*/
+
 /* From FoodPanda DS */
 
 
 
 /* Query 2 */
 /* Specific Column Selection */
-/* 
+ 
 select 
 CompleteStoreName,
 FoodType,
 AverageRating,
 Reviewers
 from isld_restaurants;
-*/
+
 /* From FoodPanda DS */
 
 
 
 /* Query 3 */
 /* WHERE Filtering */
-/*
+
 select 
 CompleteStoreName, FoodType
 from isld_restaurants
@@ -44,14 +44,14 @@ select
 CompleteStoreName,AverageRating
 from isld_restaurants
 where AverageRating > 4.5;
-*/
+
 /* From FoodPanda DS */
 
 
 
 /* Query 4 */
 /* Multiple Conditions */
-/*
+
 select 
 CompleteStoreName, FoodType, AverageRating
 from isld_restaurants
@@ -61,77 +61,77 @@ select
 CompleteStoreName, FoodType, AverageRating
 from isld_restaurants
 where FoodType = 'Pakistani' and AverageRating > 4.5;
-*/
+
 /* From FoodPanda DS */
 
 
 
 /* Query 5 */
 /* ORDER BY */
-/*
+
 select Name, Wickets from odibowling
 order by Wickets DESC;
-*/
+
 /* From Cricket DS */
 
 
 
 /* Query 6 */
 /* COUNT With GROUP BY */
-/*
+
 select Matches, COUNT(Name) AS PlayersCount,
     STRING_AGG(Name,',') AS PlayerNames
 FROM odibatting
 GROUP BY Matches
 ORDER BY Matches DESC;
-*/
+
 /* From Cricket DS */
 
 
 
 /* Query 7 */
 /* SUM with GROUP BY: e.g. Total Runs by Batsman */
-/*
+
 select
 STRING_AGG(Name,',') AS [Players Name],
 Matches, SUM(Runs) AS [Total Runs]
 from odibatting
 group by Matches
 order by Matches DESC;
-*/
+
 /* From Cricket DS */
 
 
 
 /* Query 8 */
 /* AVG with GROUP BY: e.g. Average Runs */
-/*
+
 select
 STRING_AGG(Name,',') AS [Players Name],
 Matches, AVG(Average) AS [Average Runs]
 from odibatting
 group by Matches
 order by Matches DESC;
-*/
+
 /* From Cricket DS */
 
 
 
 /* Query 9 */
 /* HAVING CLAUSE */
-/*
+
 SELECT FoodType
 FROM isld_restaurants
 GROUP BY FoodType
 HAVING COUNT(*) > 15;
-*/
+
 /* From FoodPanda DS */
 
 
 
 /* Query 10 */
 /* MAX/MIN with GROUP BY */
-/*
+
 select
 Name,Runs
 FROM odibatting
@@ -156,14 +156,14 @@ select
 Name,Hundreds
 FROM odibatting
 WHERE Hundreds = (SELECT MAX(Hundreds) FROM odibatting where Strike_Rate >95 );
-*/
+
 /* From Cricket DS */
 
 
 
 /* Query 11,12,13 */
 /* JOINS */
-/*
+
 select c.FirstName,c.LastName,c.PhoneNumber, o.PaymentMethod from
 customer as c
 inner join orders as o
@@ -180,14 +180,14 @@ select * from
 customer as c
 right join orders as o
 on o.CustomerID = c.CustomerID;
-*/
+
 /* From CO Customers/Orders DS */
 
 
 
 /* Query 14 */
 /* MULTIPLE JOINS */
-/*
+
 select 
     od.Name AS PlayerName,
     od.Runs AS ODI_Runs,
@@ -201,14 +201,14 @@ inner join testbatting tb
     on tb.Name = od.Name
 inner join t20batting t20
     ON t20.Name = od.Name;
-*/
+
 /* From Cricket DS */
 
 
 
 /* Query 15 */
 /* CTE */
-/*
+
 with ODI_Player AS (
 
 select
@@ -231,13 +231,13 @@ t.Average as [Test Average]
 from ODI_Player od
 inner join Test_Player as t
 on od.Name = t.Name;
-*/
+
 /* From Cricket DS */
 
 
 
 /* Combining All Concepts "A mini project' */
-/*
+
 WITH BattingSummary AS (
     SELECT 
         Name,
@@ -269,15 +269,5 @@ FROM TopPlayers t
 JOIN BattingSummary b 
     ON t.Name = b.Name
 ORDER BY t.Total_Runs DESC;
-*/
+
 /* From Cricket DS */
-
-
-
-
-
-
-
-
-
-
